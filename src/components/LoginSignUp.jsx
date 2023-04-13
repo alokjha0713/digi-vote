@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, Fragment, useState } from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { login, register } from '../../src/actions/userAction';
+import { login, register, token } from '../../src/actions/userAction';
 import { useAlert } from 'react-alert';
 import './login-signup.css'
 import { clearErrors } from '../../src/actions/userAction';
@@ -16,7 +16,20 @@ const LoginSignUp = () => {
     const history = useNavigate();
     const location = useLocation();
 
-    const {error, loading, isAuthenticated} = useSelector((state)=>state.user);
+    const {error, loading, isAuthenticated, user:user1, token:userToken} = useSelector((state)=>state.user);
+
+    console.log(user1);
+    console.log(userToken);
+
+
+   
+
+    localStorage.setItem('token',userToken);
+    localStorage.setItem('user', user1?._id);
+    localStorage.setItem('userName',user1?.name);
+    localStorage.setItem('userImage',user1?.url)
+
+
 
     const [loginEmail, setLoginEmail] = useState("");
     const [loginPassword, setLoginPassword] = useState("");
@@ -35,6 +48,7 @@ const LoginSignUp = () => {
     const loginSubmit = (e) => {
       e.preventDefault();
       dispatch(login(loginEmail, loginPassword));
+      dispatch(token(loginEmail,loginPassword));
     console.table(loginEmail, loginPassword);
     }
 
@@ -54,7 +68,7 @@ const LoginSignUp = () => {
         setUser({...user,[e.target.name] : e.target.value});
     }
 
-    const redirect = location.search ? location.search.split("=")[1] : "/account";
+    const redirect = location.search ? location.search.split("=")[1] : "/home";
     console.log(error);
     useEffect(() => {
       if(error){
@@ -81,7 +95,9 @@ const LoginSignUp = () => {
     
 
   return (
-    <>
+    <Fragment>
+       
+        <div className='loginSignUpContainer'>
         <div className='container' id='main' ref={classTab}>
             <div className='sign-up' onSubmit={registerSubmit}>
                 <form action="#"  >
@@ -156,18 +172,20 @@ const LoginSignUp = () => {
                 <div className='overlay'>
                     <div className='overlay-left'>
                         <h1>Welcome Back!</h1>
-                        <p>To keep connected with us please login with your personal info</p>
+                        <p className='loginSignup-para'>To keep connected with us please login with your personal info</p>
                         <button id='signIn' onClick={(e) => switchTabs(e,"signIn")}>Sign In</button>
                     </div>
                     <div className='overlay-right'>
                         <h1>Hello, Friend</h1>
-                        <p>Enter your personal details and start journey with us.</p>
+                        <p className='loginSignup-para'>Enter your personal details and start journey with us.</p>
                         <button id='signUp'onClick={(e) => switchTabs(e,"signUp")} >Sign Up</button>
                     </div>
                 </div>
             </div>
         </div>
-    </>
+        </div>
+       
+    </Fragment>
   )
 }
 

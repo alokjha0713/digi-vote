@@ -2,8 +2,11 @@ import React, {useEffect, useState, Fragment} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useAlert } from 'react-alert';
 import { getSlotDetails } from '../actions/slotBookingAction';
-import { useNavigate, useParams } from 'react-router-dom';
-import Print from '../components/Print';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import SlotCard from '../components/SlotCard';
+import './slot-card.css';
+import logo from './images/logo.png';
+
 
 const SlotBooking = () => {
 
@@ -30,11 +33,14 @@ const SlotBooking = () => {
 
 
   return (
-   <>
-    <div>
-                <form action="#"  onSubmit={pincodeSubmit}>
+   <div className='slot-container'>
+        <div className='enter-pincode'>
+            <Link to='/'><img src={logo} alt="" /></Link>
+                <div  className='pincode-form'>
+                <form action="#" onSubmit={pincodeSubmit}>
                     <h1>Enter pincode</h1>
                     <input 
+                        className='input-pincode'
                         type="text" 
                         name='pincode' 
                         placeholder='Enter Pincode' 
@@ -45,16 +51,20 @@ const SlotBooking = () => {
                     
                     <button>Enter pincode</button>
                 </form>
+                </div>
     </div>
-    <div>
+    
+    <section className='hero'>
+        <div className='card-grid'>
         {area && 
                 area.map((item)=> ( 
-                <Print areaName={item.areaName} />
+                <SlotCard areaName={item.areaName} description={item.description} imgUrl={item.url}/>
+    
                 ))}
     
-        
+        </div>
+    </section>
     </div>
-   </>
   )
 }
 

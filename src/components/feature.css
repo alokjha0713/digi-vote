@@ -1,0 +1,55 @@
+.feature{
+    margin: 4rem 6rem;
+}
+.feature h1{
+    font-size: 3rem;
+    margin-left: 37%;
+}
+.par{
+    margin-left: 40%;
+}
+.first-feat{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4.5rem;
+}
+
+.first-feat-reverse{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4.5rem;
+}
+.feat-text{
+    width: 45%;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.feat-text h2{
+    padding-bottom: 1rem;
+}
+
+.image{
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    z-index: -99;
+}
+
+.image img{
+    width: 49%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: -1px 1px 62px -18px rgba(0,0,0,0.19);
+}
+
+.image img:nth-child(2){
+    position: absolute;
+    top: -10%;
+    right: 0;
+}

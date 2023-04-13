@@ -12,10 +12,12 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { userReducer } from "./reducers/userReducer";
 import { slotBookingReducer } from "./reducers/slotBookingReducer";
+import { allSlotsReducer } from "./reducers/allSlotsReducer";
 
 const reducer = combineReducers({
     user: userReducer,
     slot: slotBookingReducer,
+    allSlots: allSlotsReducer,
 });
 
 const middleware = [thunk];

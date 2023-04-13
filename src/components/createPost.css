@@ -1,0 +1,59 @@
+.post-create{
+    /* background: linear-gradient(to right, #FF9933, #FFFFFF, #128807); */
+    background-size: cover;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post-create-form{
+    /* background: linear-gradient(to bottom, #FF5733, #FFC300, #4CAF50, #008CBA, #4834d4, #8e44ad); */
+
+    background-color: white;
+    max-width: 800px;
+    height: max-content;
+    margin: 25px auto;
+    border: 1px solid rgb(173,173,173);
+    border-radius: 5px;
+}
+.post-create-post{
+    display:flex;
+    align-items: center;
+    text-align: center;
+    justify-content :  space-around ;
+}
+.post-create-post h6{
+    color:blue;
+    cursor: pointer;
+}
+.post-create-upload-post{
+    align-items: center;
+}
+.post-create-upload-post >img{
+    border-radius: 35px;
+}
+.post-create-show-profile img{
+    
+        width:100px;
+        border-radius: 50%;
+        height: auto ;
+        object-fit: contain;
+        padding:5px;
+}
+.post-create-show-profile{
+    display:flex;
+    align-items: center;
+}
+.post-create-show-profile>h5{
+    margin:0;
+    padding :50px;
+}
+.post-create-caption{
+    background-color: transparent;
+    width: 90%;
+}
+#output{
+    width:200px;
+    height :200px;
+    align-items: center;
+}
