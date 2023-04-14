@@ -18,7 +18,7 @@ const Navbar1 = () => {
                         </li>
                     );
                 })}
-                <Link to='/login'><button>Sign Up</button></Link>
+                <Link to='/login'><button className="signup-button">Sign Up</button></Link>
             </ul>
         </nav>
     )

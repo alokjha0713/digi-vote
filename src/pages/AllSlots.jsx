@@ -4,6 +4,8 @@ import { getAllSlots } from '../actions/allSlotsAction';
 import { useSelector, useDispatch } from 'react-redux';
 import { useAlert } from 'react-alert';
 import SlotBookingCard from '../components/SlotBookingCard';
+import logo from './images/logo.png';
+import { Link } from 'react-router-dom';
 
 import '../components/slot-booking-card.css';
 
@@ -31,6 +33,7 @@ const AllSlots = () => {
     <>
         
         <section className='booking-hero'>
+        <Link to='/'><img className='logo-image' src={logo} alt="" /></Link>
           <div className='booking-card-grid'>
           {timeslot &&
                 timeslot?.map((item,i)=>(
@@ -43,7 +46,7 @@ const AllSlots = () => {
                 ))}
           </div>
         </section>
-        <button>Submit</button>      
+       
                 
        
     </>

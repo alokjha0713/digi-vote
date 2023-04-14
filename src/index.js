@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import {positions, transitions, Provider as AlertProvider} from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
+import { ChakraProvider, theme } from '@chakra-ui/react'
 
 const options={
   timeout:5000,
@@ -19,9 +20,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
  
     <Provider store={store}>
+    {/* <ChakraProvider theme={theme}> */}
     <AlertProvider template={AlertTemplate} {...options}>
       <App />
     </AlertProvider>
+    {/* </ChakraProvider> */}
+    
   </Provider>
   
 );

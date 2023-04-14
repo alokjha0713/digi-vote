@@ -87,10 +87,6 @@
     display: flex;
 }
 
-img{
-    width: 150px;
-    height:150px;
-}
 
 input-pincode {
     max-width: 50%;

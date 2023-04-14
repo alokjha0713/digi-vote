@@ -16,7 +16,7 @@
 }
 .nav-menu{
     display: grid;
-    grid-template-columns: repeat(8,auto);
+    grid-template-columns: repeat(7,auto);
     grid-gap: 10px;
     list-style: none;
     align-items: center;
@@ -43,7 +43,7 @@
 .nav-links-mobile{
     display: none;
 }
-button{
+.signup-button{
  padding: 0.5rem 1rem;
  white-space: nowrap;
  border-radius: 0.3rem;
@@ -54,7 +54,7 @@ button{
  transition: all 0.2s ease-in-out;
 }
 
-button:hover{
+.signup-button:hover{
     background-color: #151516;
     color: #fff;
 }

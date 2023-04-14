@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, Fragment, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './travelre.css'
 
 
@@ -11,6 +12,8 @@ const Travelre = () => {
     const [url,setUrl]=useState('')
     const [email,setEmail]=useState('')
     const [amount,setAmount]=useState('')
+
+    const history = useNavigate();
 
     console.log(email)
     const addinpdata=async (e)=>{
@@ -45,6 +48,7 @@ const Travelre = () => {
         })
 
         console.log(res)
+        history('/home');
     
     }
 

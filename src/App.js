@@ -11,6 +11,9 @@ import SignupHome from './pages/SignupHome';
 import CommunityHome from './components/CommunityHome';
 import CreatePost from './components/CreatePost';
 
+import GoogleMaps from './components/GoogleMaps';
+import Guide from './components/Guide';
+
 function App() {
   return (
     <>
@@ -25,6 +28,7 @@ function App() {
         <Route path='/travelre' element={<Travelre />} />
         <Route path='/home/:token' element ={<CommunityHome/>}/>
         <Route path='/CreatePost/:token' element ={<CreatePost/>}/>
+        <Route path='/guidelines' element={<Guide />} />
       </Routes>
     </BrowserRouter>
 

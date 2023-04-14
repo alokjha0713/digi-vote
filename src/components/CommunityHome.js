@@ -108,9 +108,10 @@ const makeComment = (text, id) => {
                 return posts;
             }
             });
+            console.log("This is new Data "+newData);
             setData(newData);
             setComment("");
-            console.log(result);
+            console.log("aassss "+result);
         });
     };
 // console.log("hello this is res1 " + res1);
@@ -125,7 +126,7 @@ return (
                 <div className="comm-card">
                 <div className="comm-card-header">
                     <div className="comm-card-pic">
-                        <img src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"  alt="">
+                        <img src={posts.postedBy.url}  alt="">
                         </img>
                     </div>
                     <h4>{posts.postedBy.name}</h4>
@@ -193,13 +194,13 @@ return (
                 className="comm-comment"
                 onClick={() => {
                     makeComment(comment, posts._id);
-                if (show) {
-                    setShow(false);
-                    } else {
-                    setShow(true);
-                    console.log("printing comment in home.js "+ item);
-                    setItem();
-                    }
+                // if (show) {
+                //     setShow(false);
+                //     } else {
+                //     setShow(true);
+                //     console.log("printing comment in home.js "+ item);
+                //     setItem();
+                //     }
                 }}
                 >
                 Post
@@ -223,7 +224,7 @@ return (
               >
                 <div className="comm-card-pic">
                   <img
-                    src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                    src={item.postedBy.url}
                     alt=""
                   />
                 </div>
@@ -241,7 +242,7 @@ return (
                         className="comm-commenter"
                         style={{ fontWeight: "comm-bolder" }}
                     >
-                        Ramesh
+                        {comment.postedBy.name +" : "}
                         {" "}
                       </span>
                       <span className="comm-commentText">{comment.comment}</span>

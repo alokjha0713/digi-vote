@@ -6,22 +6,16 @@ export const MenuItems=[
         icon : "fa-sharp fa-solid fa-house"
     },
     {
-        title : "About",
-        url : "/about",
+        title : "Guidelines",
+        url : "/guidelines",
         cName : "nav-links",
-        icon : "fa-solid fa-circle-info"
+        icon : "fa-light fa-users"
     },
     {
         title : "SlotBook",
         url : "/slotbooking",
         cName : "nav-links",
-        icon : "fa-thin fa-check-to-slot"
-    },
-    {
-        title : "Map",
-        url : "/map",
-        cName : "nav-links",
-        icon : "fa-sharp fa-regular fa-map-pin"
+        icon : "fa-solid fa-check-to-slot"
     },
     {
         title: "FareFunds",
@@ -33,7 +27,7 @@ export const MenuItems=[
         title: "Electiongram",
         url: `/home/${localStorage.getItem('token')}`,
         cName: "nav-links",
-        icon: "fa-sharp fa-regular fa-map-pin"
+        icon: "fa-solid fa-check-to-slot"
     }
    
     
@@ -48,10 +42,10 @@ export const MenuItems1 = [
         icon : "fa-sharp fa-solid fa-house"
     },
     {
-        title : "About",
-        url : "/about",
+        title : "Guidelines",
+        url : "/guidelines",
         cName : "nav-links",
-        icon : "fa-solid fa-circle-info"
+        icon : "fa-light fa-users"
     },
   
     
